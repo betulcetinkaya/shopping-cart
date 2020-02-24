@@ -1,6 +1,5 @@
-# Project Title
+# Shopping Cart
 
-Shopping Cart
 
 ## Getting Started
 
@@ -40,6 +39,7 @@ To run a single service
 ## Sample Use Case
 
 Before you start make sure that all the services registered to the service-registry.
+
 1. Go to the service-registry ui via http://localhost:8761/
 2. Following services should exist in the instance list. 
 ```
@@ -152,6 +152,24 @@ curl -X POST \
     "costPerProduct": 2,
     "fixedCost": 4
   }'
+```
+
+**Note : In the starting of the server, Hystrix may block first call. In this case, please make another call, it will continue to work properly. It is a known issue, and it can be fixed with the following configuration.**
+```
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
 ```
 
 ## Built With
