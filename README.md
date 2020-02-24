@@ -47,7 +47,7 @@ Before you start make sure that all the services registered to the service-regis
 * DELIVERY-SERVICE
 * DISCOUNT-SERVICE
 * PRODUCT-SERVICE
-3. Some initial data will be loaded in the mongo db.(Initial products, categories, etc.) You can use following apis to use initial data.
+3. Some initial data will be loaded in the mongo db.(Initial products, categories, etc.) You can use shopping carts with initial data.
  
  Current shopping cart will be affected by the api calls and will be respond. 
 
