@@ -1,0 +1,14 @@
+.apt_generated/
+target/
+.classpath
+.factorypath
+.project
+.mvn/
+.settings/
+.idea/
+*.iml
+bin/
+*.log
+temp
+*/.metadata/
+*/.DS_Store

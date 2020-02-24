@@ -1,0 +1,87 @@
+version: "3.5"
+services:
+  assignment-db:
+    image: mongo:3.6.17
+    container_name: assignment-db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    ports:
+      - "27017:27017"
+    networks:
+      - case-services
+    expose:
+      - "8300-8302"
+      - "8300-8302/udp"
+      - "8600"
+      - "8600/udp"
+    volumes:
+      - type: volume
+        source: mongo-main
+        target: "/mongo/data"
+  discovery-service:
+    image: betulcetinkaya/discovery-service:${TAG}
+    container_name: discovery-service
+    ports:
+      - 8761:8761
+    networks:
+      - case-services
+  api-gateway:
+    image: betulcetinkaya/api-gateway:${TAG}
+    container_name: api-gateway
+    env_file: docker-compose.env
+    ports:
+      - 80:80
+    networks:
+      - case-services
+
+  discount-service:
+    image: betulcetinkaya/discount-service:${TAG}
+    container_name: discount-service
+    env_file: docker-compose.env
+    depends_on:
+      - "discovery-service"
+      - "assignment-db"
+    ports:
+      - 8083:8083
+    networks:
+      - case-services
+  product-service:
+    image: betulcetinkaya/product-service:${TAG}
+    container_name: product-service
+    env_file: docker-compose.env
+    depends_on:
+      - "discovery-service"
+      - "assignment-db"
+    ports:
+      - 8081:8081
+    networks:
+      - case-services
+  cart-service:
+    image: betulcetinkaya/cart-service:${TAG}
+    container_name: cart-service
+    env_file: docker-compose.env
+    depends_on:
+      - "discovery-service"
+      - "assignment-db"
+    ports:
+      - 8082:8082
+    networks:
+      - case-services
+  delivery-service:
+    image: betulcetinkaya/delivery-service:${TAG}
+    container_name: delivery-service
+    env_file: docker-compose.env
+    depends_on:
+      - "discovery-service"
+      - "assignment-db"
+    ports:
+      - 8084:8084
+    networks:
+      - case-services
+networks:
+  case-services:
+
+volumes:
+  mongo-main:
+
