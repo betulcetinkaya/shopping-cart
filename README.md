@@ -51,7 +51,7 @@ Before you start make sure that all the services registered to the service-regis
  
  Current shopping cart will be affected by the api calls and will be respond. 
 
-* Add item to the shopping cart.
+### Add item to the shopping cart.
 ```
 curl -X POST \
   http://localhost:8080/api/cart/shopping-carts/1/items \
@@ -63,7 +63,7 @@ curl -X POST \
 }'
 ```
 
-* Add more item with another productId.
+### Add more item with another productId.
 ```
 curl -X POST \
   http://localhost:8080/api/cart/shopping-carts/1/items \
@@ -74,14 +74,14 @@ curl -X POST \
 	"quantity": 2
 }'
 ```
-* Apply a coupon.
+### Apply a coupon.
 ```
 curl -X PUT \
   http://localhost:8080/api/cart/shopping-carts/1/coupon/1 \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache'
 ```
-* Calculate delivery cost and find it in the response body.
+### Calculate delivery cost and find it in the response body.
 ```
 curl -X PUT \
   http://localhost:8080/api/cart/shopping-carts/1/delivery/2 \
@@ -89,7 +89,7 @@ curl -X PUT \
 ```  
 4. You can also create your own data with following apis.
 
-* Create a product.
+### Create a product.
 ```
 curl -X POST \
   http://localhost:8080/api/product/products \
@@ -103,7 +103,7 @@ curl -X POST \
     "price": 50.75
   }'
 ```  
-* Create a category.
+### Create a category.
 ```
 curl -X POST \
   http://localhost:8080/api/product/categories \
@@ -114,7 +114,7 @@ curl -X POST \
     "parentId": 1
 }'
 ```
-* Create a campaign.
+### Create a campaign.
 ```
 curl -X POST \
   http://localhost:8080/api/discount/campaigns \
@@ -127,7 +127,7 @@ curl -X POST \
     "discountType": "RATE"
 }'
 ```
-* Create a coupon.
+### Create a coupon.
 ```
 curl -X POST \
   http://localhost:8080/api/discount/coupons \
@@ -139,7 +139,7 @@ curl -X POST \
     "discountType": "AMOUNT"
 }'
 ```
-* Create a delivery.
+### Create a delivery.
 ```
 curl -X POST \
   http://localhost:8080/api/delivery/deliveries \
