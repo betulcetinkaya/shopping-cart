@@ -156,11 +156,11 @@ curl -X POST \
 
 ## Built With
 
-* [Jdk11]
-* [Docker]
-* [Maven]
-* [Spring]
-* [MongoDB]
+* Jdk11
+* Docker
+* Maven
+* Spring
+* MongoDB
 
 ## Authors
 
