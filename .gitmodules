@@ -16,3 +16,6 @@
 [submodule "discovery-service"]
 	path = discovery-service
 	url = https://github.com/betulcetinkaya/discovery-service.git
+[submodule "assignment-db"]
+	path = assignment-db
+	url = https://github.com/betulcetinkaya/assignment-db.git
