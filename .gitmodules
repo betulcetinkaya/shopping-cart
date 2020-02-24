@@ -1,0 +1,18 @@
+[submodule "product-service"]
+	path = product-service
+	url = https://github.com/betulcetinkaya/product-service.git
+[submodule "cart-service"]
+	path = cart-service
+	url = https://github.com/betulcetinkaya/cart-service.git
+[submodule "delivery-service"]
+	path = delivery-service
+	url = https://github.com/betulcetinkaya/delivery-service.git
+[submodule "discount-service"]
+	path = discount-service
+	url = https://github.com/betulcetinkaya/discount-service.git
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/betulcetinkaya/api-gateway.git
+[submodule "discovery-service"]
+	path = discovery-service
+	url = https://github.com/betulcetinkaya/discovery-service.git
