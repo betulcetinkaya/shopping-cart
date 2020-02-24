@@ -47,7 +47,7 @@ Before you start make sure that all the services registered to the service-regis
 * DELIVERY-SERVICE
 * DISCOUNT-SERVICE
 * PRODUCT-SERVICE
-3. Some initial data will be loaded in the mongo db.(Initial products, categories, etc.) You can use shopping cart apis with initial data.
+3. Some initial data will be loaded in the MongoDB.(Initial products, categories, etc.) You can use shopping cart apis with initial data.
  
  Current shopping cart will be affected by the api calls and will be respond. 
 
@@ -56,7 +56,6 @@ Before you start make sure that all the services registered to the service-regis
 curl -X POST \
   http://localhost:8080/api/cart/shopping-carts/1/items \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 943a6e9b-5f92-46bf-bb49-b015c58460d8' \
   -H 'cache-control: no-cache' \
   -d '{
 	"productId": 2,
@@ -69,7 +68,6 @@ curl -X POST \
 curl -X POST \
   http://localhost:8080/api/cart/shopping-carts/1/items \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 077b827b-d49e-4dcc-9416-1d7d7a27e4ca' \
   -H 'cache-control: no-cache' \
   -d '{
 	"productId": 3,
@@ -81,14 +79,12 @@ curl -X POST \
 curl -X PUT \
   http://localhost:8080/api/cart/shopping-carts/1/coupon/1 \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 233dd959-8613-40c9-a81b-9b737a576081' \
   -H 'cache-control: no-cache'
 ```
 * Calculate delivery cost and find it in the response body.
 ```
 curl -X PUT \
   http://localhost:8080/api/cart/shopping-carts/1/delivery/2 \
-  -H 'Postman-Token: 2987e950-1a3a-4d4f-9321-f4c4cbcedf83' \
   -H 'cache-control: no-cache'
 ```  
 4. You can also create your own data with following apis.
@@ -98,7 +94,6 @@ curl -X PUT \
 curl -X POST \
   http://localhost:8080/api/product/products \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: a9878ece-8f73-46c0-9fce-5fa78c13cee7' \
   -H 'cache-control: no-cache' \
   -d '{
     "title": "Product 4",
@@ -113,7 +108,6 @@ curl -X POST \
 curl -X POST \
   http://localhost:8080/api/product/categories \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 525e2b08-ab3e-431b-bfe9-68df16d543f7' \
   -H 'cache-control: no-cache' \
   -d '{
     "title": "Category 3",
@@ -125,7 +119,6 @@ curl -X POST \
 curl -X POST \
   http://localhost:8080/api/discount/campaigns \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 656f1601-a00d-4792-b698-9a477ba6ae7a' \
   -H 'cache-control: no-cache' \
   -d '{
     "categoryId": "1",
@@ -139,7 +132,6 @@ curl -X POST \
 curl -X POST \
   http://localhost:8080/api/discount/coupons \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 2763c499-7e17-4074-b0f1-727fe6bcd2d5' \
   -H 'cache-control: no-cache' \
   -d '{
     "minAmount": 500,
@@ -152,7 +144,6 @@ curl -X POST \
 curl -X POST \
   http://localhost:8080/api/delivery/deliveries \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: e5662374-bc98-49f2-914c-b29684c843d6' \
   -H 'cache-control: no-cache' \
   -d '{
     "costPerDelivery": 5,
