@@ -42,11 +42,13 @@ To run a single service
 Before you start make sure that all the services registered to the service-registry.
 1. Go to the service-registry ui via http://localhost:8761/
 2. Following services should exist in the instance list. 
-* API-GATEWAY	
-* CART-SERVICE
-* DELIVERY-SERVICE
-* DISCOUNT-SERVICE
-* PRODUCT-SERVICE
+```
+API-GATEWAY	
+CART-SERVICE
+DELIVERY-SERVICE
+DISCOUNT-SERVICE
+PRODUCT-SERVICE
+```
 3. Some initial data will be loaded in the MongoDB.(Initial products, categories, etc.) You can use shopping cart apis with initial data.
  
  Current shopping cart will be affected by the api calls and will be respond. 
