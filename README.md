@@ -1,5 +1,6 @@
 # Shopping Cart
 
+Shopping cart application with java spring microservices architecture.
 
 ## Getting Started
 
